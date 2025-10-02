@@ -5,10 +5,10 @@ class Eim < Formula
 
   if Hardware::CPU.intel?
     url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.2/eim-cli-macos-x64.zip"
-    sha256 "e74e600428f83e4551dd64beafa337c89934a3d1f7e6401b4b4c11a8ec206a53"
+    sha256 "49dfa599138450cfbee03d1dbdea7811191f97a3c18ac92738ed03b07aa481b3"
   elsif Hardware::CPU.arm?
     url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.2/eim-cli-macos-aarch64.zip"
-    sha256 "0aeb7354690111d0ed5e2198bd3e606d029fd5fdfed22371fb8c73f7b07e4d4b"
+    sha256 "059be02a9bdbd1a02e3dfa058bf8d8eb6b5c874a4cb2c38f3ad8a2e016aba004"
   end
 
   def install
