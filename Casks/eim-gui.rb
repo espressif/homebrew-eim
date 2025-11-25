@@ -1,13 +1,24 @@
 cask "eim-gui" do
-  version "v0.5.5"
+  version "v0.5.6"
 
   if Hardware::CPU.intel?
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.5/eim-gui-macos-x64.dmg"
-    sha256 "b6b32df143a156c02176a603762bb6be3625f9f1ae944c5c0ae3dc37e7d7c69c"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.6/eim-gui-macos-x64.dmg"
+    sha256 "51414d06740d12d94d559f75e91a9b5fb4bd36c5bd295ec8798232435ff3263c"
   elsif Hardware::CPU.arm?
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.5/eim-gui-macos-aarch64.dmg"
-    sha256 "737807e7ce490a7eb44f304b67e33ca7aad12bb7566370426483257634ac77eb"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.6/eim-gui-macos-aarch64.dmg"
+    sha256 "7756971d199f8519f9ccc06667f2ee63b54d43123cf85cbb39b7ba31a90dc401"
   end
+
+  depends_on "libgcrypt"
+  depends_on "glib"
+  depends_on "pixman"
+  depends_on "sdl2"
+  depends_on "libslirp"
+  depends_on "dfu-util"
+  depends_on "python@3.13" => :recommended
+  depends_on "python@3.12" => :recommended
+  depends_on "python@3.11" => :recommended
+  depends_on "python@3.10" => :recommended
 
   name "ESP-IDF Installer and Manager"
   desc "GUI application for managing ESP-IDF installations"
