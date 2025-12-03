@@ -1,32 +1,53 @@
-class Eim < Formula
-  desc "ESP-IDF Installer and Manager CLI"
-  homepage "https://github.com/espressif/idf-im-ui"
-  version "v0.5.6"
+# typed: false
+# frozen_string_literal: true
 
-  if Hardware::CPU.intel?
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.6/eim-cli-macos-x64.zip"
-    sha256 "aee232aa19591a616b56a98d9b04def4db3733e412f93cfa44660b69971a545d"
-  elsif Hardware::CPU.arm?
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.6/eim-cli-macos-aarch64.zip"
-    sha256 "d03f8a8e0455bb194cae030368ce329914184930c72423458e57ee5aab9970ec"
+class Eim < Formula
+  desc "ESP-IDF Installation Manager - CLI tool for setting up ESP-IDF development environment"
+  homepage "https://github.com/espressif/idf-im-ui"
+  version "0.5.7"
+  license "MIT"
+
+  on_macos do
+    on_intel do
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.7/eim-cli-macos-x64.zip"
+      sha256 "1ab47bf71e665ac174e116dc7e7171f1ed4298bbc430dfb135235a93354952a1"
+    end
+    on_arm do
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.5.7/eim-cli-macos-aarch64.zip"
+      sha256 "87ffcad3e0227bdb344580bf1bd2de3224e1e5f5265c848b1baa0bd4d4eee09b"
+    end
   end
 
+  # Runtime dependencies for QEMU (used by ESP-IDF for emulation)
   depends_on "libgcrypt"
   depends_on "glib"
   depends_on "pixman"
   depends_on "sdl2"
   depends_on "libslirp"
+
+  # DFU utility for flashing
   depends_on "dfu-util"
-  depends_on "python@3.13" => :recommended
-  depends_on "python@3.12" => :recommended
-  depends_on "python@3.11" => :recommended
-  depends_on "python@3.10" => :recommended
+
+  # ESP-IDF requires Python 3.9-3.13. We install python@3.12 as default.
+  # If user already has python@3.12, Homebrew won't reinstall it.
+  depends_on "python@3.12"
 
   def install
     bin.install "eim"
   end
 
+  def caveats
+    <<~EOS
+      ESP-IDF Installation Manager (EIM) has been installed.
+
+      Python 3.12 was installed as a dependency (ESP-IDF requires Python 3.9-3.13).
+      Python 3.14+ is not yet supported.
+
+      Run 'eim' to install ESP-IDF.
+    EOS
+  end
+
   test do
-    system "#{bin}/eim", "--version"
+    assert_match "eim", shell_output("#{bin}/eim --version")
   end
 end
