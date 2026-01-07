@@ -1,5 +1,5 @@
 cask "eim-gui" do
-  version ""
+  version "v0.6.0"
 
   on_intel do
     url "https://github.com/espressif/idf-im-ui/releases/download/v0.6.0/eim-gui-macos-x64.dmg"
