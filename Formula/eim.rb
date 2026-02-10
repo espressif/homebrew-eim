@@ -4,7 +4,7 @@
 class Eim < Formula
   desc "ESP-IDF Installation Manager - CLI tool for setting up ESP-IDF development environment"
   homepage "https://github.com/espressif/idf-im-ui"
-  version ""
+  version "0.7.1"
   license "MIT"
 
   on_macos do
