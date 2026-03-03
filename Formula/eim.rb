@@ -4,17 +4,17 @@
 class Eim < Formula
   desc "ESP-IDF Installation Manager - CLI tool for setting up ESP-IDF development environment"
   homepage "https://github.com/espressif/idf-im-ui"
-  version "0.8.3"
+  version "0.8.4"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.8.3/eim-cli-macos-x64.zip"
-      sha256 "0ad7a114bc87b73584b49160eccc6a671bcbdab63bb4adf3307ebc9a024594ca"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.8.4/eim-cli-macos-x64.zip"
+      sha256 "319c86a091620066448734d0d0a38191cfcb32a29444dc498792cc3dc554bbee"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.8.3/eim-cli-macos-aarch64.zip"
-      sha256 "8ae99321c35907c1f74a9a5aa8ff4f249f0e7367f864c39aa14175e339e5c3c9"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.8.4/eim-cli-macos-aarch64.zip"
+      sha256 "51679312a7cc8bee0f8d6b2786e6c7af3649c730a0d541c72b42f4030d298971"
     end
   end
 
