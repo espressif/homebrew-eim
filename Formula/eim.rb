@@ -10,11 +10,11 @@ class Eim < Formula
   on_macos do
     on_intel do
       url "https://github.com/espressif/idf-im-ui/releases/download/v0.8.4/eim-cli-macos-x64.zip"
-      sha256 "319c86a091620066448734d0d0a38191cfcb32a29444dc498792cc3dc554bbee"
+      sha256 "ec97fbd41c1778c38fdee7cc62b3507bec856e7213172e92534f7ee619acd531"
     end
     on_arm do
       url "https://github.com/espressif/idf-im-ui/releases/download/v0.8.4/eim-cli-macos-aarch64.zip"
-      sha256 "51679312a7cc8bee0f8d6b2786e6c7af3649c730a0d541c72b42f4030d298971"
+      sha256 "f6d02aa25f13d06192fd068125f0e91b332f82a145fc2fef383d4fc086f439cc"
     end
   end
 
