@@ -1,13 +1,13 @@
 cask "eim-gui" do
-  version "0.10.0"
+  version "0.10.1"
 
   on_intel do
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.10.0/eim-gui-macos-x64.dmg"
-    sha256 "7ee62c2a4aadde706128b8758f3eaa56fc11bc57f8b1f26f06a00e60c4769309"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.10.1/eim-gui-macos-x64.dmg"
+    sha256 "acee0e42a77c3285bac4890ea3373a2369c668359cf365f72479f201ad730973"
   end
   on_arm do
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.10.0/eim-gui-macos-aarch64.dmg"
-    sha256 "b32003be11302dc51eb8a7d141c1f41e68ec2fef67fc476be95dde324757b427"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.10.1/eim-gui-macos-aarch64.dmg"
+    sha256 "74756267c47494962a70cac3e76784552929ba1d076d7a2ae549e6b4307cce68"
   end
 
   name "ESP-IDF Installation Manager"
@@ -19,8 +19,8 @@ cask "eim-gui" do
   caveats <<~EOS
     ESP-IDF Installation Manager (EIM) has been installed.
 
-    IMPORTANT: ESP-IDF requires Python 3.9, 3.10, 3.11, 3.12, or 3.13.
-    Python 3.14+ is not yet supported.
+    IMPORTANT: ESP-IDF requires Python 3.9, 3.10, 3.11, 3.12, 3.13 or 3.14.
+    Python > 3.14 is not yet supported.
 
     If you don't have a compatible Python version, install one with:
       brew install python@3.12
