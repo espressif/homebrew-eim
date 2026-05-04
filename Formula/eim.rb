@@ -4,28 +4,28 @@
 class Eim < Formula
   desc "ESP-IDF Installation Manager - CLI tool for setting up ESP-IDF development environment"
   homepage "https://github.com/espressif/idf-im-ui"
-  version "0.11.2"
+  version "0.12.0"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.11.2/eim-cli-macos-x64.zip"
-      sha256 "cf561a61fda56dc73ef4492f702c125c643402832faa89fd069e89501c5b18d8"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.12.0/eim-cli-macos-x64.zip"
+      sha256 "400e876ab4e03653d94e56277b730bef77cac9bef6aacb31c03d6538b0b97ae0"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.11.2/eim-cli-macos-aarch64.zip"
-      sha256 "f9d4190781f4faa32024db957e860513b60f0dff0f2d5fc14c4a80d702e0a980"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.12.0/eim-cli-macos-aarch64.zip"
+      sha256 "34d80107fb339a4b838e1c170c6ff529b6823012d8392e3b927322c2237c3fe4"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.11.2/eim-cli-linux-x64.zip"
-      sha256 "7bf10a35aac88850c6b8157a2bdd7b4d3c85c622b87a647f1431f75fcf1c1470"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.12.0/eim-cli-linux-x64.zip"
+      sha256 "23c794dcb470466e7250e56b0148c2cd009cf603620cecf9ff07c73ea31b9dfe"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.11.2/eim-cli-linux-aarch64.zip"
-      sha256 "cd8af2c11324778d286ddae8196601d09432dce00b554fcced65a36e79adde61"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.12.0/eim-cli-linux-aarch64.zip"
+      sha256 "ed906a0e0cbecc23da4e45f4be6dcda34eb5c90960f6dbf540b30d7423b2e3e9"
     end
     # Homebrew on Linux (Linuxbrew) doesn't support ARMv7 at all, so ARMv7 is not considered here
   end
@@ -35,7 +35,7 @@ class Eim < Formula
 
   # ESP-IDF requires Python 3.9-3.14. We install python@3.12 as default.
   # If user already has python@3.12, Homebrew won't reinstall it.
-  depends_on "python@3.12"
+  depends_on "python"
 
   def install
     bin.install "eim"
@@ -45,9 +45,6 @@ class Eim < Formula
   def caveats
     <<~EOS
       ESP-IDF Installation Manager (EIM) has been installed.
-
-      Python 3.12 was installed as a dependency (ESP-IDF requires Python 3.9-3.14).
-      Python > 3.14 is not yet supported.
 
       Shell completions have been installed.
       They will be available in new terminal sessions.
