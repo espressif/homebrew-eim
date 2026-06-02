@@ -1,13 +1,13 @@
 cask "eim-gui" do
-  version "0.12.6"
+  version "0.13.0"
 
   on_intel do
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.12.6/eim-gui-macos-x64.dmg"
-    sha256 "4ddbb4405bbe34d612f8d097d62b38a3437a3ba69609ecefd8cbf27f7b9d787b"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.13.0/eim-gui-macos-x64.dmg"
+    sha256 "aaf997061a977754dcb0b9b6440b4323de5fc1fd772162930c9d3fbee4ab070b"
   end
   on_arm do
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.12.6/eim-gui-macos-aarch64.dmg"
-    sha256 "b5e08a69fdad492e7bd4d3b66a7a3cb39ada3c7909b69314e61639c9bd844dd2"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.13.0/eim-gui-macos-aarch64.dmg"
+    sha256 "def74635476eb84e5f14d8390fef71f92827c3851737c06977c83167b1ca77b5"
   end
 
   name "ESP-IDF Installation Manager"
