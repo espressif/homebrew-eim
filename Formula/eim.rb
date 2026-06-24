@@ -10,22 +10,22 @@ class Eim < Formula
   on_macos do
     on_intel do
       url "https://github.com/espressif/idf-im-ui/releases/download/v0.15.0/eim-cli-macos-x64.zip"
-      sha256 "810237b9a54ac28ef8381873f1499d70804eba8686f1149e1992f61da8c70c7c"
+      sha256 "66fd6a73e780552b933955ca141bd3116e146cdec1ccf7a34f3c6af2b2bbe91f"
     end
     on_arm do
       url "https://github.com/espressif/idf-im-ui/releases/download/v0.15.0/eim-cli-macos-aarch64.zip"
-      sha256 "459562ba66ee53652c284b846bf80b228ef4f8db3c36e84cf2d216ace15a4ec1"
+      sha256 "045db2fc2de16f75a79bee6d73b860de0a34cf94973e223b7517c365ea569222"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/espressif/idf-im-ui/releases/download/v0.15.0/eim-cli-linux-x64.zip"
-      sha256 "138f5a8e7fc50c430162ee2c9220dcd1b27c4ea3441d98d33e6f0f9e30825f60"
+      sha256 "8a1065fa4ba1d4ff4b4a89332e540f018cb7f3cf989ab90a526e99dc00c52d32"
     end
     on_arm do
       url "https://github.com/espressif/idf-im-ui/releases/download/v0.15.0/eim-cli-linux-aarch64.zip"
-      sha256 "63aa7100aeb65e86969c39858fa26c1e246a28cf22c58ee16fbb2278a0e4f8a8"
+      sha256 "5e88ae1ca7eba08526d6655f301f072b43f36e850a033cbf079021b882fc05bc"
     end
     # Homebrew on Linux (Linuxbrew) doesn't support ARMv7 at all, so ARMv7 is not considered here
   end
