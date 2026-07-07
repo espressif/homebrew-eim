@@ -1,13 +1,13 @@
 cask "eim-gui" do
-  version "0.16.0"
+  version "0.17.0"
 
   on_intel do
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.16.0/eim-gui-macos-x64.dmg"
-    sha256 "8a7d2bfc15de059d7a642bc55d134e43de745a6c1040241154e4fcb922a00e16"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.0/eim-gui-macos-x64.dmg"
+    sha256 "9441dc66aaa724e830659397d3d28fdf97a147840230334dff78720253108cc4"
   end
   on_arm do
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.16.0/eim-gui-macos-aarch64.dmg"
-    sha256 "f45b412440a01ade26680fdc39fbd994d51d561921b7b5bb07d776031a44ebb3"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.0/eim-gui-macos-aarch64.dmg"
+    sha256 "7a3c16dd0189e390f12fd8e5705edb7c578ae1f416dc1c3fcfe8243dd74832e3"
   end
 
   name "ESP-IDF Installation Manager"
@@ -16,8 +16,18 @@ cask "eim-gui" do
 
   app "eim.app"
 
+  # The GUI binary is CLI-capable (invoked as `eim <command>`), but a
+  # cask only installs the .app bundle by default — nothing lands on
+  # PATH unless we say so explicitly. This symlinks the executable
+  # embedded in the bundle into $(brew --prefix)/bin, so GUI users
+  # get the same `eim` command CLI-only users get, without needing
+  # to separately `brew install eim`.
+  binary "#{appdir}/eim.app/Contents/MacOS/eim"
+
   caveats <<~EOS
     ESP-IDF Installation Manager (EIM) has been installed.
+
+    The `eim` command is now also available in your terminal.
 
     IMPORTANT: ESP-IDF requires Python 3.9, 3.10, 3.11, 3.12, 3.13 or 3.14.
 
