@@ -4,28 +4,28 @@
 class Eim < Formula
   desc "ESP-IDF Installation Manager - CLI tool for setting up ESP-IDF development environment"
   homepage "https://github.com/espressif/idf-im-ui"
-  version "0.17.2"
+  version "0.17.3"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.2/eim-cli-macos-x64_v0.17.2.zip"
-      sha256 "7bf826ea14582a01c94bbefdf7de1b7b847c80884a72d599901cf8a224ccfe0f"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.3/eim-cli-macos-x64.zip"
+      sha256 "da8c642c2c1e8fe10961214dc3438c6c85e437457db1b94f7d14ea197cf7fb31"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.2/eim-cli-macos-aarch64_v0.17.2.zip"
-      sha256 "05ee7ae4672549d7e7b0092354b322b87113836ff38dd9d975de8737b78b2360"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.3/eim-cli-macos-aarch64.zip"
+      sha256 "fb451b7577f6b80e13f9bf6bd007bc31d5190a5a8af93026a55eca7ddf5b28b2"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.2/eim-cli-linux-x64_v0.17.2.zip"
-      sha256 "de7e63168446721f9b88624de120ababf8e8f879c0040f06e5dc7b7c73f5a2f7"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.3/eim-cli-linux-x64.zip"
+      sha256 "bf32f15382348eb94762472ff9596477d244540189a6ee3e6a8f0e40e26ca5d3"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.2/eim-cli-linux-aarch64_v0.17.2.zip"
-      sha256 "f24c3bb0489262ddb1431938dff24dc3a17b4ccbf0be2e0124974f4a537fe451"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.17.3/eim-cli-linux-aarch64.zip"
+      sha256 "9ed24f7e5723ce8aa89bf5fff54777989dcd554b9f1993af89ded9c0db2f71fc"
     end
     # Homebrew on Linux (Linuxbrew) doesn't support ARMv7 at all, so ARMv7 is not considered here
   end
@@ -38,7 +38,10 @@ class Eim < Formula
   depends_on "python"
 
   def install
-    bin.install "eim"
+    # Linux archives ship the binary under a versioned name (eim_vX.Y.Z)
+    # with a plain "eim" symlink next to it; install the real file.
+    real_binary = Dir["eim_*"].first || "eim"
+    bin.install real_binary => "eim"
     generate_completions_from_executable(bin/"eim", "completions")
   end
 
