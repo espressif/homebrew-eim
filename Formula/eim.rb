@@ -4,28 +4,28 @@
 class Eim < Formula
   desc "ESP-IDF Installation Manager - CLI tool for setting up ESP-IDF development environment"
   homepage "https://github.com/espressif/idf-im-ui"
-  version "0.19.0"
+  version "0.20.0"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.19.0/eim-cli-macos-x64.zip"
-      sha256 "1ffc0aca3ae8760e8fc997fa902b1458970e1624e485d6cb71cd7f3cfc58990f"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.20.0/eim-cli-macos-x64.zip"
+      sha256 "a006fb8a916aff4d6ae08f98120b4fc55bb72241071601b61f271a6d28723332"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.19.0/eim-cli-macos-aarch64.zip"
-      sha256 "ef96dba210579b8ea71aa6eecb023c90b413b8a8ce85d84282215b0fd79827a0"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.20.0/eim-cli-macos-aarch64.zip"
+      sha256 "a605c15163498875ef6a9efef5b82a9294df90a71f1a411e17f262abd55d6f2c"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.19.0/eim-cli-linux-x64.zip"
-      sha256 "03347e62c8309d7a93936b9f804e9e6de490cf7704602a5171e88c8c2b2f53eb"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.20.0/eim-cli-linux-x64.zip"
+      sha256 "43ffeaf412aae78ee41c24cb430434e10e87521e74d1c4d6a2636a181d5f4f80"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.19.0/eim-cli-linux-aarch64.zip"
-      sha256 "15b78ec46e2c84f88b64846c4e3e80072a8dca21bd07391a462408f89dac11df"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.20.0/eim-cli-linux-aarch64.zip"
+      sha256 "40675bb951985b6dbb3af55b15e684e1759c8d0a14084d4453412ca67e7249fe"
     end
     # Homebrew on Linux (Linuxbrew) doesn't support ARMv7 at all, so ARMv7 is not considered here
   end
