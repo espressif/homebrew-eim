@@ -4,28 +4,28 @@
 class Eim < Formula
   desc "ESP-IDF Installation Manager - CLI tool for setting up ESP-IDF development environment"
   homepage "https://github.com/espressif/idf-im-ui"
-  version "0.21.1"
+  version "0.22.0"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.21.1/eim-cli-macos-x64.zip"
-      sha256 "f3334e87f718ef223b044d99ed64f72041efc5d1c950c7c25165df25b47cb81b"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.22.0/eim-cli-macos-x64.zip"
+      sha256 "6ab522af3a3f508166cdd18f7023a888261bb198efe32c325ce0cb36ddb388f4"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.21.1/eim-cli-macos-aarch64.zip"
-      sha256 "a03aa71a720576a5e5615e9022023e472ee479f6542e987faf0d0197d60d9a8e"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.22.0/eim-cli-macos-aarch64.zip"
+      sha256 "98042ad2d2977435c886583e3941b55b07147e255822d7d502edf2b52680fde4"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.21.1/eim-cli-linux-x64.zip"
-      sha256 "0391b2fce3bad521b3403d656f9569ccd5cc066eeabd55f645139409cb8e691c"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.22.0/eim-cli-linux-x64.zip"
+      sha256 "60230f603c72e21535b2861e388e0770bf67eae124284df4240742854e649fd0"
     end
     on_arm do
-      url "https://github.com/espressif/idf-im-ui/releases/download/v0.21.1/eim-cli-linux-aarch64.zip"
-      sha256 "8d3518ee14f88332e122a88fb0d497172c472b9891a570db0cd8e8012626863c"
+      url "https://github.com/espressif/idf-im-ui/releases/download/v0.22.0/eim-cli-linux-aarch64.zip"
+      sha256 "954ba6f81920feb068683340039de4e9a9625789f4d9bf1f7248b875124d2600"
     end
     # Homebrew on Linux (Linuxbrew) doesn't support ARMv7 at all, so ARMv7 is not considered here
   end
@@ -33,7 +33,7 @@ class Eim < Formula
   # DFU utility for flashing
   depends_on "dfu-util"
 
-  # ESP-IDF requires Python 3.9-3.14. We install python@3.12 as default.
+  # ESP-IDF requires Python 3.10-3.15. We install python@3.12 as default.
   # If user already has python@3.12, Homebrew won't reinstall it.
   depends_on "python"
 

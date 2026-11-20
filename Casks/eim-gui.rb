@@ -1,13 +1,13 @@
 cask "eim-gui" do
-  version "0.21.1"
+  version "0.22.0"
 
   on_intel do
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.21.1/eim-gui-macos-x64.dmg"
-    sha256 "2b81c4fca35195332afce0ed303dcb6c8c54077f0a0772d2266eaa9b6c7226d3"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.22.0/eim-gui-macos-x64.dmg"
+    sha256 "291d50c3642c9813ff97e67a37dccc6520fcf747453c855cc61587ced4f0fc29"
   end
   on_arm do
-    url "https://github.com/espressif/idf-im-ui/releases/download/v0.21.1/eim-gui-macos-aarch64.dmg"
-    sha256 "f9a9d6ee510efd0862105516aac077df8ccd92ad4f330ca3fa1a2a0f5cda8412"
+    url "https://github.com/espressif/idf-im-ui/releases/download/v0.22.0/eim-gui-macos-aarch64.dmg"
+    sha256 "3b3eba695db1bb632563ab07ea2dbaa2a73d04f3193149a0300373c2d9867e1f"
   end
 
   name "ESP-IDF Installation Manager"
@@ -29,7 +29,7 @@ cask "eim-gui" do
 
     The `eim` command is now also available in your terminal.
 
-    IMPORTANT: ESP-IDF requires Python 3.9, 3.10, 3.11, 3.12, 3.13 or 3.14.
+    IMPORTANT: ESP-IDF requires Python 3.10, 3.11, 3.12, 3.13, 3.14 or 3.15.
 
     If you don't have a compatible Python version, install one with:
       brew install python
